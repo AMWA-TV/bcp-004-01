@@ -3,17 +3,8 @@
   "description": "Describes a String Parameter Constraint",
   "title": "String Parameter Constraint",
   "type": "object",
-  "required": [
-    "type"
-  ],
-  "minProperties": 2,
+  "minProperties": 1,
   "properties": {
-    "type": {
-      "type": "string",
-      "enum": [
-        "string"
-      ]
-    },
     "enum": {
       "type": "array",
       "minItems": 1,
