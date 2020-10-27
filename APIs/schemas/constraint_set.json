@@ -4,6 +4,29 @@
   "title": "Constraint Set",
   "type": "object",
   "minProperties": 1,
+  "properties": {
+    "urn:x-nmos:cap:meta:label": {
+      "type": "string"
+    },
+    "urn:x-nmos:cap:format:media_type": {
+      "$ref": "parameter_constraint_string.json"
+    },
+    "urn:x-nmos:cap:format:grain_rate": {
+      "$ref": "parameter_constraint_rational.json"
+    },
+    "urn:x-nmos:cap:format:frame_width": {
+      "$ref": "parameter_constraint_integer.json"
+    },
+    "urn:x-nmos:cap:format:frame_width": {
+      "$ref": "parameter_constraint_integer.json"
+    },
+    "urn:x-nmos:cap:format:channel_count": {
+      "$ref": "parameter_constraint_integer.json"
+    },
+    "urn:x-nmos:cap:format:sample_rate": {
+      "$ref": "parameter_constraint_rational.json"
+    }
+  },
   "patternProperties": {
     "^urn:x-nmos:cap:(?!meta:)": {
       "$ref": "param_constraint.json"
