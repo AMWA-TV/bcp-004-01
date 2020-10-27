@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Describes a Receiver with Constraint Sets",
+  "title": "Receiver with Constraint Sets",
+  "type": "object",
+  "required": [
+    "caps"
+  ],
+  "properties": {
+    "caps": {
+      "description": "Capabilities",
+      "type": "object",
+      "required": [
+        "constraint_sets"
+      ],
+      "properties": {
+        "constraint_sets": {
+          "$ref": "constraint_sets.json"
+        }
+      }
+    }
+  }
+}

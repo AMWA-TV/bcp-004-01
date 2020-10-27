@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Describes a Constraint Set",
+  "title": "Constraint Set",
+  "type": "object",
+  "minProperties": 1,
+  "patternProperties": {
+    "^urn:x-nmos:cap:(?!meta:)": {
+      "$ref": "parameter_constraint.json"
+    }
+  }
+}

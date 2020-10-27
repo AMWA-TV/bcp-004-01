@@ -1,0 +1,80 @@
+{
+  "id": "1eb53d65-ac83-441c-86f6-9b27df30ef0c",
+  "version": "1441704532:450093308",
+  "label": "",
+  "description": "",
+  "tags": {},
+  "device_id": "05017e08-b329-45f9-a566-a3f99cc11e4d",
+  "subscription": {
+    "sender_id": "2683ad14-642f-459d-a169-ef91c76cec6b",
+    "active": true
+  },
+  "interface_bindings": [
+    "eth0"
+  ],
+  "transport": "urn:x-nmos:transport:rtp",
+  "format": "urn:x-nmos:format:video",
+  "caps": {
+    "media_types": [ "video/raw" ],
+    "constraint_sets": [
+      {
+        "urn:x-nmos:cap:meta:label": "1080i",
+        "urn:x-nmos:cap:format:color_sampling": {
+          "type": "string",
+          "enum": [ "YCbCr-4:2:2" ]
+        },
+        "urn:x-nmos:cap:format:frame_height": {
+          "type": "integer",
+          "enum": [ 1080 ]
+        },
+        "urn:x-nmos:cap:format:frame_width": {
+          "type": "integer",
+          "enum": [ 1920 ]
+        },
+        "urn:x-nmos:cap:format:grain_rate": {
+          "type": "rational",
+          "enum": [
+             { "numerator": 25 },
+             { "numerator": 30000, "denominator": 1001 }
+           ]
+        },
+        "urn:x-nmos:cap:format:interlace_mode": {
+          "type": "string",
+          "enum": [
+            "interlaced_tff",
+            "interlaced_bff",
+            "interlaced_psf"
+          ]
+        }
+      },
+      {
+        "urn:x-nmos:cap:meta:label": "1080p",
+        "urn:x-nmos:cap:format:color_sampling": {
+          "type": "string",
+          "enum": [ "YCbCr-4:2:2" ]
+        },
+        "urn:x-nmos:cap:format:frame_height": {
+          "type": "integer",
+          "enum": [ 1080 ]
+        },
+        "urn:x-nmos:cap:format:frame_width": {
+          "type": "integer",
+          "enum": [ 1920 ]
+        },
+        "urn:x-nmos:cap:format:grain_rate": {
+          "type": "rational",
+          "enum": [
+             { "numerator": 25 },
+             { "numerator": 30000, "denominator": 1001 },
+             { "numerator": 50 },
+             { "numerator": 60000, "denominator": 1001 }
+           ]
+        },
+        "urn:x-nmos:cap:format:interlace_mode": {
+          "type": "string",
+          "enum": [ "progressive" ]
+        }
+      }
+    ]
+  }
+}
