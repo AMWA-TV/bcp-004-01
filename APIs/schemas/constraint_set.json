@@ -6,7 +6,7 @@
   "minProperties": 1,
   "patternProperties": {
     "^urn:x-nmos:cap:(?!meta:)": {
-      "$ref": "parameter_constraint.json"
+      "$ref": "param_constraint.json"
     }
   }
 }
