@@ -3,17 +3,8 @@
   "description": "Describes a Boolean Parameter Constraint",
   "title": "Boolean Parameter Constraint",
   "type": "object",
-  "required": [
-    "type"
-  ],
-  "minProperties": 2,
+  "minProperties": 1,
   "properties": {
-    "type": {
-      "type": "string",
-      "enum": [
-        "boolean"
-      ]
-    },
     "enum": {
       "type": "array",
       "minItems": 1,
