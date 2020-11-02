@@ -20,10 +20,6 @@
       "items": {
         "type": "string"
       }
-    },
-    "pattern": {
-      "type": "string",
-      "format": "regex"
     }
   }
 }
