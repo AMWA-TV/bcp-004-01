@@ -16,65 +16,58 @@
   "format": "urn:x-nmos:format:video",
   "caps": {
     "media_types": [ "video/raw" ],
-    "constraint_sets": [
-      {
-        "urn:x-nmos:cap:meta:label": "1080i",
-        "urn:x-nmos:cap:format:color_sampling": {
-          "type": "string",
-          "enum": [ "YCbCr-4:2:2" ]
+    "constraint_sets": {
+      "version": "1603796863:314159275",
+      "values": [
+        {
+          "urn:x-nmos:cap:meta:label": "1080i",
+          "urn:x-nmos:cap:format:color_sampling": {
+            "enum": [ "YCbCr-4:2:2" ]
+          },
+          "urn:x-nmos:cap:format:frame_height": {
+            "enum": [ 1080 ]
+          },
+          "urn:x-nmos:cap:format:frame_width": {
+            "enum": [ 1920 ]
+          },
+          "urn:x-nmos:cap:format:grain_rate": {
+            "enum": [
+               { "numerator": 25 },
+               { "numerator": 30000, "denominator": 1001 }
+             ]
+          },
+          "urn:x-nmos:cap:format:interlace_mode": {
+            "enum": [
+              "interlaced_tff",
+              "interlaced_bff",
+              "interlaced_psf"
+            ]
+          }
         },
-        "urn:x-nmos:cap:format:frame_height": {
-          "type": "integer",
-          "enum": [ 1080 ]
-        },
-        "urn:x-nmos:cap:format:frame_width": {
-          "type": "integer",
-          "enum": [ 1920 ]
-        },
-        "urn:x-nmos:cap:format:grain_rate": {
-          "type": "rational",
-          "enum": [
-             { "numerator": 25 },
-             { "numerator": 30000, "denominator": 1001 }
-           ]
-        },
-        "urn:x-nmos:cap:format:interlace_mode": {
-          "type": "string",
-          "enum": [
-            "interlaced_tff",
-            "interlaced_bff",
-            "interlaced_psf"
-          ]
+        {
+          "urn:x-nmos:cap:meta:label": "1080p",
+          "urn:x-nmos:cap:format:color_sampling": {
+            "enum": [ "YCbCr-4:2:2" ]
+          },
+          "urn:x-nmos:cap:format:frame_height": {
+            "enum": [ 1080 ]
+          },
+          "urn:x-nmos:cap:format:frame_width": {
+            "enum": [ 1920 ]
+          },
+          "urn:x-nmos:cap:format:grain_rate": {
+            "enum": [
+               { "numerator": 25 },
+               { "numerator": 30000, "denominator": 1001 },
+               { "numerator": 50 },
+               { "numerator": 60000, "denominator": 1001 }
+             ]
+          },
+          "urn:x-nmos:cap:format:interlace_mode": {
+            "enum": [ "progressive" ]
+          }
         }
-      },
-      {
-        "urn:x-nmos:cap:meta:label": "1080p",
-        "urn:x-nmos:cap:format:color_sampling": {
-          "type": "string",
-          "enum": [ "YCbCr-4:2:2" ]
-        },
-        "urn:x-nmos:cap:format:frame_height": {
-          "type": "integer",
-          "enum": [ 1080 ]
-        },
-        "urn:x-nmos:cap:format:frame_width": {
-          "type": "integer",
-          "enum": [ 1920 ]
-        },
-        "urn:x-nmos:cap:format:grain_rate": {
-          "type": "rational",
-          "enum": [
-             { "numerator": 25 },
-             { "numerator": 30000, "denominator": 1001 },
-             { "numerator": 50 },
-             { "numerator": 60000, "denominator": 1001 }
-           ]
-        },
-        "urn:x-nmos:cap:format:interlace_mode": {
-          "type": "string",
-          "enum": [ "progressive" ]
-        }
-      }
-    ]
+      ]
+    }
   }
 }
