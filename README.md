@@ -1,4 +1,4 @@
-# AMWA BCP-xxx-01: NMOS Receiver Capabilities \[Work In Progress\]
+# AMWA BCP-004-01: NMOS Receiver Capabilities \[Work In Progress\]
 
 [![Build Status](https://travis-ci.com/AMWA-TV/nmos-receiver-capabilities?branch=v1.0-dev)](https://travis-ci.com/AMWA-TV/nmos-receiver-capabilities)
 
