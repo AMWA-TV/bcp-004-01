@@ -3,7 +3,6 @@
   "description": "Describes a Number Parameter Constraint",
   "title": "Number Parameter Constraint",
   "type": "object",
-  "minProperties": 1,
   "properties": {
     "enum": {
       "type": "array",
