@@ -3,7 +3,6 @@
   "description": "Describes a Rational Parameter Constraint",
   "title": "Rational Parameter Constraint",
   "type": "object",
-  "minProperties": 1,
   "properties": {
     "enum": {
       "type": "array",

@@ -3,7 +3,6 @@
   "description": "Describes an Integer Parameter Constraint",
   "title": "Integer Parameter Constraint",
   "type": "object",
-  "minProperties": 1,
   "properties": {
     "enum": {
       "type": "array",

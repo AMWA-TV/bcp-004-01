@@ -3,7 +3,6 @@
   "description": "Describes a String Parameter Constraint",
   "title": "String Parameter Constraint",
   "type": "object",
-  "minProperties": 1,
   "properties": {
     "enum": {
       "type": "array",
