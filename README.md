@@ -1,6 +1,6 @@
 # AMWA BCP-004-01: NMOS Receiver Capabilities \[Work In Progress\]
 
-[![Build Status](https://travis-ci.com/AMWA-TV/nmos-receiver-capabilities?branch=v1.0-dev)](https://travis-ci.com/AMWA-TV/nmos-receiver-capabilities)
+[![Build Status](https://travis-ci.com/AMWA-TV/nmos-receiver-capabilities.svg?branch=v1.0-dev)](https://travis-ci.com/AMWA-TV/nmos-receiver-capabilities)
 
 This repository contains details of this AMWA Best Current Practice for how to express Receiver capabilities.
 
