@@ -10,10 +10,11 @@
     "caps": {
       "description": "Capabilities",
       "type": "object",
-      "required": [
-        "version",
-        "constraint_sets"
-      ],
+      "dependencies": {
+        "constraint_sets": [
+          "version"
+        ]
+      },
       "properties": {
         "version": {
           "description": "String formatted TAI timestamp (<seconds>:<nanoseconds>) indicating when an attribute of the 'caps' object last changed",
