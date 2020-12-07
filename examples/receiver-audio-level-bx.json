@@ -1,0 +1,70 @@
+{
+  "id": "0ae2691c-b9aa-4b50-b35f-8bfe840bf717",
+  "version": "1606515492:182809500",
+  "label": "",
+  "description": "",
+  "tags": {
+  },
+  "device_id": "b705a32e-cfa2-4d52-b9a8-6569e9abe28d",
+  "transport": "urn:x-nmos:transport:rtp.mcast",
+  "format": "urn:x-nmos:format:audio",
+  "interface_bindings": [
+    "eth0"
+  ],
+  "subscription": {
+    "active": false,
+    "sender_id": null
+  },
+  "caps": {
+    "media_types": [
+      "audio/L24",
+      "audio/L16"
+    ],
+    "constraint_sets": [
+      {
+        "urn:x-nmos:cap:meta:label": "SMPTE ST 2110-30 Level BX (125µs packet time)",
+        "urn:x-nmos:cap:format:channel_count": {
+          "maximum": 8
+        },
+        "urn:x-nmos:cap:format:sample_rate": {
+          "enum": [
+            { "numerator": 48000, "denominator": 1 },
+            { "numerator": 96000, "denominator": 1 }
+          ]
+        },
+        "urn:x-nmos:cap:transport:packet_time": {
+          "enum": [ 0.125 ]
+        }
+      },
+      {
+        "urn:x-nmos:cap:meta:label": "SMPTE ST 2110-30 Level BX (48kHz streams at 1ms packet time)",
+        "urn:x-nmos:cap:format:channel_count": {
+          "maximum": 8
+        },
+        "urn:x-nmos:cap:format:sample_rate": {
+          "enum": [
+            { "numerator": 48000, "denominator": 1 },
+          ]
+        },
+        "urn:x-nmos:cap:transport:packet_time": {
+          "enum": [ 1 ]
+        }
+      },
+      {
+        "urn:x-nmos:cap:meta:label": "SMPTE ST 2110-30 Level BX (96kHz streams at 1ms packet time)",
+        "urn:x-nmos:cap:format:channel_count": {
+          "maximum": 4
+        },
+        "urn:x-nmos:cap:format:sample_rate": {
+          "enum": [
+            { "numerator": 96000, "denominator": 1 },
+          ]
+        },
+        "urn:x-nmos:cap:transport:packet_time": {
+          "enum": [ 1 ]
+        }
+      }
+    ],
+    "version": "1606514372:376324100"
+  }
+}
