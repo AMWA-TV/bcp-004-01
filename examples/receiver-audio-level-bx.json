@@ -43,7 +43,7 @@
         },
         "urn:x-nmos:cap:format:sample_rate": {
           "enum": [
-            { "numerator": 48000, "denominator": 1 },
+            { "numerator": 48000, "denominator": 1 }
           ]
         },
         "urn:x-nmos:cap:transport:packet_time": {
@@ -57,7 +57,7 @@
         },
         "urn:x-nmos:cap:format:sample_rate": {
           "enum": [
-            { "numerator": 96000, "denominator": 1 },
+            { "numerator": 96000, "denominator": 1 }
           ]
         },
         "urn:x-nmos:cap:transport:packet_time": {
