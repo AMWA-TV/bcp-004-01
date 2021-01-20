@@ -14,7 +14,7 @@ Readers are advised to be familiar with:
 
 Readers should then read the [Best Common Practice document](docs/1.0.%20Receiver%20Capabilities.md).
 
-> HTML rendered versions of all NMOS Specifications are available on the [NMOS GitHub pages](https://amwa-tv.github.io/nmos)
+> HTML rendered versions of all NMOS Specifications are available at <https://specs.amwa.tv/nmos>
 
 ## Contents
 
