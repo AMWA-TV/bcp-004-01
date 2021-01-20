@@ -9,8 +9,8 @@ This repository contains details of this AMWA Best Current Practice for how to e
 
 Readers are advised to be familiar with:
 
-- The [overview of Networked Media Open Specifications](https://amwa-tv.github.io/nmos)
-- The AMWA [IS-04 Discovery and Registration Specification](https://amwa-tv.github.io/nmos-discovery-registration)
+- The [overview of Networked Media Open Specifications](https://specs.amwa.tv/nmos)
+- The AMWA [IS-04 Discovery and Registration Specification](https://specs.amwa.tv/is-04)
 
 Readers should then read the [Best Common Practice document](docs/1.0.%20Receiver%20Capabilities.md).
 
