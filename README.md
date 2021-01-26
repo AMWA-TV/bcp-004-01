@@ -3,25 +3,24 @@
 [![Lint Status](https://github.com/AMWA-TV/nmos-receiver-capabilities/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/nmos-receiver-capabilities/actions?query=workflow%3ALint)
 [![Render Status](https://github.com/AMWA-TV/nmos-receiver-capabilities/workflows/Render/badge.svg)](https://github.com/AMWA-TV/nmos-receiver-capabilities/actions?query=workflow%3ARender)
 
-This repository contains details of this AMWA Best Current Practice for how to express Receiver capabilities.
+[//]: # "INTRO-START"
+
+### What does it do?
+
+- Allows an IS-04 Receiver to express parametric constraints on the types of streams that it is capable of consuming
+
+### Why does it matter?
+
+- Controllers need to know whether a Receiver is capable of handling a specific Sender's stream before connecting the two
+
+### How does it work?
+
+- Establishes an open Capabilities register in the NMOS Parameter Registers that lists specifications for parametric constraints (such as width, height, frame rate, number of channels, etc.)
+- Defines how a Receiver instantiates these Parameter Constraints to make up a list of acceptable Constraint Sets, within the IS-04 'caps' attribute
+- Defines how Controllers evaluate whether an IS-04 Sender satisfies these constraints, based on the target parameters specified for each constraint (such as IS-04 Flow attributes and SDP format-specific parameters)
+
+[//]: # "INTRO-END"
 
 ## Getting started
 
-Readers are advised to be familiar with:
-
-- The [overview of Networked Media Open Specifications](https://specs.amwa.tv/nmos)
-- The AMWA [IS-04 Discovery and Registration Specification](https://specs.amwa.tv/is-04)
-
-Readers should then read the [Best Common Practice document](docs/1.0.%20Receiver%20Capabilities.md).
-
-> HTML rendered versions of all NMOS Specifications are available at <https://specs.amwa.tv/nmos>
-
-## Contents
-
-- [README.md](README.md) -- This file
-- [docs/1.0. Receiver Capabilities.md](docs/1.0.%20Receiver%20Capabilities.md) -- Best Common Practice document
-- [CHANGELOG.md](CHANGELOG.md) -- Version history
-- [CONTRIBUTING.md](CONTRIBUTING.md) -- information about contributing to the Specification
-- [LICENSE](LICENSE) -- Licenses for software and text documents
-- [NOTICE](NOTICE) -- Disclaimer
-- [Makefile](Makefile) -- Makefile for Continuous Integration
+There is more information about the NMOS Specifications and their GitHub repos at <https://specs.amwa.tv/nmos>.
