@@ -3,7 +3,7 @@
 [![Lint Status](https://github.com/AMWA-TV/nmos-receiver-capabilities/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/nmos-receiver-capabilities/actions?query=workflow%3ALint)
 [![Render Status](https://github.com/AMWA-TV/nmos-receiver-capabilities/workflows/Render/badge.svg)](https://github.com/AMWA-TV/nmos-receiver-capabilities/actions?query=workflow%3ARender)
 
-[//]: # "INTRO-START"
+<!-- INTRO-START -->
 
 ### What does it do?
 
@@ -19,7 +19,7 @@
 - Defines how a Receiver instantiates these Parameter Constraints to make up a list of acceptable Constraint Sets, within the IS-04 'caps' attribute
 - Defines how Controllers evaluate whether an IS-04 Sender satisfies these constraints, based on the target parameters specified for each constraint (such as IS-04 Flow attributes and SDP format-specific parameters)
 
-[//]: # "INTRO-END"
+<!-- INTRO-END -->
 
 ## Getting started
 
