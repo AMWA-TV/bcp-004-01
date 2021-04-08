@@ -16,7 +16,7 @@
 ### How does it work?
 
 - Establishes an open Capabilities register in the NMOS Parameter Registers that lists specifications for parametric constraints (such as width, height, frame rate, number of channels, etc.)
-- Defines how a Receiver instantiates these Parameter Constraints to make up a list of acceptable Constraint Sets, within the IS-04 'caps' attribute
+- Defines how a Receiver instantiates these Parameter Constraints to make up a list of acceptable Constraint Sets, within the IS-04 `caps` attribute
 - Defines how Controllers evaluate whether an IS-04 Sender satisfies these constraints, based on the target parameters specified for each constraint (such as IS-04 Flow attributes and SDP format-specific parameters)
 
 <!-- INTRO-END -->
