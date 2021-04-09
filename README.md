@@ -1,4 +1,4 @@
-# AMWA BCP-004-01: NMOS Receiver Capabilities \[Work In Progress\]
+# AMWA BCP-004-01: NMOS Receiver Capabilities
 
 [![Lint Status](https://github.com/AMWA-TV/nmos-receiver-capabilities/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/nmos-receiver-capabilities/actions?query=workflow%3ALint)
 [![Render Status](https://github.com/AMWA-TV/nmos-receiver-capabilities/workflows/Render/badge.svg)](https://github.com/AMWA-TV/nmos-receiver-capabilities/actions?query=workflow%3ARender)
