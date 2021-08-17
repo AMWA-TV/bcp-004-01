@@ -169,7 +169,7 @@ The Receiver advertises a list of Constraint Sets as a JSON array of these objec
 The `constraint_sets` as a whole is satisfied if **any of** the listed Constraint Sets are satisfied.
 When the list is empty, or none of the Constraint Sets are satisfied, the `constraint_sets` as a whole is thus not satisfied.
 
-Several worked examples are provided in the [Examples](2.0.%20Examples.md) section.
+Several worked examples are provided in the [Examples](Examples.md) section.
 
 ## Validating Parameter Constraints and Constraint Sets
 
