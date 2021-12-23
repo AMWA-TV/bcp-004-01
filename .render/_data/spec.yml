@@ -1,0 +1,11 @@
+amwa_id: BCP-004-01
+url: https://specs.amwa.tv/bcp-004-01
+name: Receiver Capabilities
+status: AMWA Specification
+repo_name: bcp-004-01
+alt_repo_name: nmos-receiver-capabilities
+repo_url: https://github.com/AMWA-TV/bcp-004-01
+releases:
+  - v1.0.0
+default_branch: v1.0.x
+show_in_index: true
