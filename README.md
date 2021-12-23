@@ -1,7 +1,7 @@
 # AMWA BCP-004-01: NMOS Receiver Capabilities
 
-[![Lint Status](https://github.com/AMWA-TV/nmos-receiver-capabilities/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/nmos-receiver-capabilities/actions?query=workflow%3ALint)
-[![Render Status](https://github.com/AMWA-TV/nmos-receiver-capabilities/workflows/Render/badge.svg)](https://github.com/AMWA-TV/nmos-receiver-capabilities/actions?query=workflow%3ARender)
+[![Lint Status](https://github.com/AMWA-TV/bcp-004-01/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/bcp-004-01/actions?query=workflow%3ALint)
+[![Render Status](https://github.com/AMWA-TV/bcp-004-01/workflows/Render/badge.svg)](https://github.com/AMWA-TV/bcp-004-01/actions?query=workflow%3ARender)
 
 <!-- INTRO-START -->
 
