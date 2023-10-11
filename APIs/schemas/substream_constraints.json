@@ -12,7 +12,18 @@
     "format": {
       "description": "Substream format",
       "type": "string",
-      "enum": ["video", "audio", "data"]
+      "anyOf": [
+        {
+          "enum": [
+            "urn:x-nmos:format:video",
+            "urn:x-nmos:format:audio",
+            "urn:x-nmos:format:data"
+          ]
+        },
+        {
+          "pattern": "^urn:x-nmos:format:(?!mux$)"
+        }
+      ]
     },
     "count": {
       "$ref": "param_constraint_number.json"
