@@ -255,7 +255,7 @@ The following example shows a MUX MPEG 2 transport stream receiver exposing subs
         "urn:x-nmos:substreams": [
           {
             "description": "hi-res",
-            "format": "video",
+            "format": "urn:x-nmos:format:video",
             "count": {
               "enum": [
                 1
@@ -265,7 +265,7 @@ The following example shows a MUX MPEG 2 transport stream receiver exposing subs
           },
           {
             "description": "proxy",
-            "format": "video",
+            "format": "urn:x-nmos:format:video",
             "count": {
               "minimum": 0,
               "maximum": 1
@@ -273,7 +273,7 @@ The following example shows a MUX MPEG 2 transport stream receiver exposing subs
             "constraint_sets": [...]
           },
           {
-            "format": "audio",
+            "format": "urn:x-nmos:format:audio",
             "count": {
               "enum": [
                 0,
