@@ -46,6 +46,7 @@ Manufacturers MAY use their own namespaces to indicate Parameter Constraints whi
 ### Parameter Constraint Types
 
 The specification defines the JSON value type to which the constraint relates, which MUST be one of:
+
 * `string`
 * `integer`
 * `number`
@@ -87,6 +88,7 @@ It could therefore be better to explicitly constrain the target parameter to all
 ### Common Constraint Keywords
 
 The following attributes are allowed for all constraint types:
+
 * `enum` as an array value with one or more elements of the specified type
 
 ### String Constraint Keywords
@@ -161,6 +163,22 @@ The metadata attribute `urn:x-nmos:cap:meta:enabled` MAY be used to indicate Con
 A Controller MUST NOT take into consideration a Constraint Set that has this attribute set to `false`, unless the Controller is capable of making the required configuration changes. Controllers MAY use this attribute as a hint to users that a Sender and Receiver could be connected subject to a reconfiguration.
 
 If a Constraint Set is enabled or the Receiver does not support offline capabilities then this attribute MAY be omitted.
+
+### Substreams
+
+The `urn:x-nmos:substreams` attribute allows MUX receivers to indicate per substream constraints.
+
+The substreams are represented as a JSON array containing substream JSON objects.
+
+Each substream object includes the following attributes:
+
+* a description
+* the format of the substream
+* a count which specifies how many instances of this substream are required (both min, max or enum attributes can be used for this)
+* constraint_sets for this particular substream. These constraint sets are defined in the same way as constraints defined for single essence flows [see Constraint Sets](#constraint-sets).
+
+A Constraint Set using the `substreams` attribute is satisfied if **all of** its Substream Parameter Constraints are satisfied in the quantities specified by each `count` attribute.
+This implies that if **any of** the Substream Parameter Constraints are _not_ satisfied in the quantities specified by each `count` attribute, the Constraint Set as a whole is not satisfied.
 
 ### Listing Constraint Sets
 
