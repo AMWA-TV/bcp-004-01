@@ -166,7 +166,7 @@ If a Constraint Set is enabled or the Receiver does not support offline capabili
 
 ### Substreams
 
-The `urn:x-nmos:substreams` attribute allows MUX receivers to indicate per substream constraints.
+The `urn:x-nmos:substreams` attribute allows mux Receivers to indicate per substream constraints.
 
 The substreams are represented as a JSON array containing substream JSON objects.
 

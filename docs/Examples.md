@@ -239,7 +239,7 @@ For example, Type N receivers can be expected to correctly receive a stream orig
 
 ### Substreams
 
-The following example shows a MUX MPEG 2 transport stream receiver exposing substream constraints.
+The following example shows a mux MPEG 2 transport stream Receiver exposing substream constraints.
 
 ```json
 {
