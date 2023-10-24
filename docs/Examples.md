@@ -254,7 +254,7 @@ The following example shows a mux MPEG 2 transport stream Receiver exposing subs
       {
         "urn:x-nmos:substreams": [
           {
-            "description": "hi-res",
+            "description": "hi-res video profile",
             "format": "urn:x-nmos:format:video",
             "count": {
               "enum": [
@@ -264,7 +264,7 @@ The following example shows a mux MPEG 2 transport stream Receiver exposing subs
             "constraint_sets": [...]
           },
           {
-            "description": "proxy",
+            "description": "proxy video profile",
             "format": "urn:x-nmos:format:video",
             "count": {
               "minimum": 0,
@@ -273,6 +273,7 @@ The following example shows a mux MPEG 2 transport stream Receiver exposing subs
             "constraint_sets": [...]
           },
           {
+            "description": "audio profile",
             "format": "urn:x-nmos:format:audio",
             "count": {
               "enum": [
