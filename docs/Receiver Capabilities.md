@@ -180,6 +180,12 @@ Each substream object includes the following attributes:
 A Constraint Set using the `substreams` attribute is satisfied if **all of** its Substream Parameter Constraints are satisfied in the quantities specified by each `count` attribute.
 This implies that if **any of** the Substream Parameter Constraints are _not_ satisfied in the quantities specified by each `count` attribute, the Constraint Set as a whole is not satisfied.
 
+Substream Parameter Constraints are matched against parent Flow and source attributes. Each parent Flow can only be used to satisfy one Substream Parameter Constraints. The following diagram shows this matching workflow.
+
+| ![Substreams](images/substreams.png) |
+|:--:|
+| _**Substreams**_ |
+
 ### Listing Constraint Sets
 
 The Receiver advertises a list of Constraint Sets as a JSON array of these objects, using the key `constraint_sets` in the `caps` object.
