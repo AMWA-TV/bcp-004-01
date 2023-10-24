@@ -216,7 +216,7 @@ The Receiver MUST reflect any change in its capabilities by updating the `caps` 
 
 ## Behaviour: Controllers
 
-Controllers are strongly RECOMMENDED to support all Parameter Constraints listed in the Capabilities register in the [NMOS Parameter Registers][] that are applicable for the kinds of Receiver with which they interact.
+Controllers are strongly RECOMMENDED to support all Parameter Constraints, including [per-substream](#substreams) Parameter Contraints, listed in the Capabilities register in the [NMOS Parameter Registers][] that are applicable for the kinds of Receiver with which they interact.
 However, Controllers MAY ignore individual Parameter Constraints whose unique identifiers they do not recognize.
 Some Parameter Constraints are only relevant to specific `transport` and `format` values or to particular IANA media types.
 When a Controller cannot evaluate any of the Parameter Constraints in a Constraint Set, that Constraint Set SHOULD be considered to be satisfied, but the Controller MAY distinguish this case for a user.
