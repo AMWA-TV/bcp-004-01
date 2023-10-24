@@ -236,3 +236,59 @@ For example, Type N receivers can be expected to correctly receive a stream orig
 
 [TR-05]: https://www.videoservicesforum.org/download/technical_recommendations/VSF_TR-05_2018-06-23.pdf
 "VSF TR-05: Essential Formats and Descriptions for Interoperability of SMPTE ST 2110-20 Video Signals"
+
+### Substreams
+
+The following example shows a mux MPEG 2 transport stream Receiver exposing substream constraints.
+
+```json
+{
+  "id": "9dd002e2-76a0-4edc-88ef-7d4aff4b2d26",
+  "transport": "rtp",
+  "format": "mux",
+  "caps": {
+    "media_types": [
+      "video/MP2T"
+    ],
+    "constraint_sets": [
+      {
+        "urn:x-nmos:substreams": [
+          {
+            "description": "hi-res",
+            "format": "urn:x-nmos:format:video",
+            "count": {
+              "enum": [
+                1
+              ]
+            },
+            "constraint_sets": [...]
+          },
+          {
+            "description": "proxy",
+            "format": "urn:x-nmos:format:video",
+            "count": {
+              "minimum": 0,
+              "maximum": 1
+            },
+            "constraint_sets": [...]
+          },
+          {
+            "format": "urn:x-nmos:format:audio",
+            "count": {
+              "enum": [
+                0,
+                2,
+                4
+              ]
+            },
+            "constraint_sets": [...]
+          }
+        ]
+      },
+      {
+        "urn:x-nmos:substreams": [...]
+      }
+    ]
+  }
+}
+```
