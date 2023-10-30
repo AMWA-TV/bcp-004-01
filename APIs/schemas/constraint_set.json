@@ -20,6 +20,13 @@
       "description": "This value indicates whether a Constraint Set is available to use immediately (true) or whether this is an offline capability which can be activated via some unspecified configuration mechanism (false). When the attribute is omitted its value is assumed to be true.",
       "type": "boolean",
       "default": true
+    },
+    "urn:x-nmos:substreams": {
+      "description": "This exposes any substream constraints.",
+      "type": "array",
+      "items": {
+        "$ref": "substream_constraints.json"
+      }
     }
   },
   "patternProperties": {

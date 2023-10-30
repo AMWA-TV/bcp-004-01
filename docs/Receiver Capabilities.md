@@ -46,6 +46,7 @@ Manufacturers MAY use their own namespaces to indicate Parameter Constraints whi
 ### Parameter Constraint Types
 
 The specification defines the JSON value type to which the constraint relates, which MUST be one of:
+
 * `string`
 * `integer`
 * `number`
@@ -87,6 +88,7 @@ It could therefore be better to explicitly constrain the target parameter to all
 ### Common Constraint Keywords
 
 The following attributes are allowed for all constraint types:
+
 * `enum` as an array value with one or more elements of the specified type
 
 ### String Constraint Keywords
@@ -162,6 +164,28 @@ A Controller MUST NOT take into consideration a Constraint Set that has this att
 
 If a Constraint Set is enabled or the Receiver does not support offline capabilities then this attribute MAY be omitted.
 
+### Substreams
+
+The `urn:x-nmos:substreams` attribute allows mux Receivers to indicate per substream constraints.
+
+The substreams are represented as a JSON array containing substream JSON objects.
+
+Each substream object includes the following attributes:
+
+* a description
+* the format of the substream
+* a count which specifies how many instances of this substream are required (both min, max or enum attributes can be used for this)
+* constraint_sets for this particular substream. These constraint sets are defined in the same way as constraints defined for single essence flows [see Constraint Sets](#constraint-sets).
+
+A Constraint Set using the `substreams` attribute is satisfied if **all of** its Substream Parameter Constraints are satisfied in the quantities specified by each `count` attribute.
+This implies that if **any of** the Substream Parameter Constraints are _not_ satisfied in the quantities specified by each `count` attribute, the Constraint Set as a whole is not satisfied.
+
+Substream Parameter Constraints are matched against parent Flow and source attributes. Each parent Flow can only be used to satisfy one Substream Parameter Constraints. The following diagram shows this matching workflow.
+
+| ![Substreams](images/substreams.png) |
+|:--:|
+| _**Substreams**_ |
+
 ### Listing Constraint Sets
 
 The Receiver advertises a list of Constraint Sets as a JSON array of these objects, using the key `constraint_sets` in the `caps` object.
@@ -198,7 +222,7 @@ The Receiver MUST reflect any change in its capabilities by updating the `caps` 
 
 ## Behaviour: Controllers
 
-Controllers are strongly RECOMMENDED to support all Parameter Constraints listed in the Capabilities register in the [NMOS Parameter Registers][] that are applicable for the kinds of Receiver with which they interact.
+Controllers are strongly RECOMMENDED to support all Parameter Constraints, including [per-substream](#substreams) Parameter Contraints, listed in the Capabilities register in the [NMOS Parameter Registers][] that are applicable for the kinds of Receiver with which they interact.
 However, Controllers MAY ignore individual Parameter Constraints whose unique identifiers they do not recognize.
 Some Parameter Constraints are only relevant to specific `transport` and `format` values or to particular IANA media types.
 When a Controller cannot evaluate any of the Parameter Constraints in a Constraint Set, that Constraint Set SHOULD be considered to be satisfied, but the Controller MAY distinguish this case for a user.
