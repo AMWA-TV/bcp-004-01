@@ -123,8 +123,6 @@ The Constraint Set is represented as a JSON object with attributes that are the 
 
 ### Constraint Set Metadata
 
-Each Parameter Constraint is given a unique identifier - a URN. Parameter Constraints defined by the AMWA have the form:
-
 Additional metadata about each Constraint Set MAY be included, using the metadata attributes listed in the Capabilities register in the [NMOS Parameter Registers][]. Metadata attributes defined by the AMWA have the form:
 ```
 urn:x-nmos:cap:meta:<attribute>
