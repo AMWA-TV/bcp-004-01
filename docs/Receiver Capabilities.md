@@ -123,7 +123,7 @@ The Constraint Set is represented as a JSON object with attributes that are the 
 
 ### Constraint Set Metadata
 
-Additional metadata about each Constraint Set MAY be included, using the metadata attributes listed in the Capabilities register in the [NMOS Parameter Registers][] with the following unique identifiers:
+Additional metadata about each Constraint Set MAY be included, using the metadata attributes listed in the Capabilities register in the [NMOS Parameter Registers][]. Metadata attributes defined by the AMWA have the form:
 ```
 urn:x-nmos:cap:meta:<attribute>
 ```
