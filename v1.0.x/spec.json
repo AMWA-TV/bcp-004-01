@@ -1,0 +1,27 @@
+{
+  "amwa_id": "BCP-004-01",
+  "url": "https://specs.amwa.tv/bcp-004-01",
+  "name": "Receiver Capabilities",
+  "status": "AMWA Specification",
+  "repo_name": "bcp-004-01",
+  "alt_repo_name": "nmos-receiver-capabilities",
+  "repo_url": "https://github.com/AMWA-TV/bcp-004-01",
+  "releases": [
+    "v1.0.0"
+  ],
+  "default_branch": "v1.0.x",
+  "show_in_index": true,
+  "intro": {
+    "what_does_it_do": [
+      "Allows an IS-04 Receiver to express parametric constraints on the types of streams that it is capable of consuming"
+    ],
+    "why_does_it_matter": [
+      "Controllers need to know whether a Receiver is capable of handling a specific Sender's stream before connecting the two"
+    ],
+    "how_does_it_work": [
+      "Establishes an open Capabilities register in the NMOS Parameter Registers that lists specifications for parametric constraints (such as width, height, frame rate, number of channels, etc.)",
+      "Defines how a Receiver instantiates these Parameter Constraints to make up a list of acceptable Constraint Sets, within the IS-04 `caps` attribute",
+      "Defines how Controllers evaluate whether an IS-04 Sender satisfies these constraints, based on the target parameters specified for each constraint (such as IS-04 Flow attributes and SDP format-specific parameters)"
+    ]
+  }
+}
