@@ -1,5 +1,10 @@
 [
   {
+    "version": "publish-arg-mux-proposal",
+    "title": "publish-arg-mux-proposal",
+    "aliases": []
+  },
+  {
     "version": "v1.0.x",
     "title": "v1.0.x",
     "aliases": []
