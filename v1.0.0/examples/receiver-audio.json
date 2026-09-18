@@ -1,0 +1,53 @@
+{
+  "id": "6605bf77-f95b-5d12-bbd7-8c4f98b79b25",
+  "version": "1605275841:891227800",
+  "label": "",
+  "description": "",
+  "tags": {
+  },
+  "device_id": "7652d792-e99f-57ff-a540-faccbf36a3a2",
+  "transport": "urn:x-nmos:transport:rtp.mcast",
+  "format": "urn:x-nmos:format:audio",
+  "interface_bindings": [
+    "eth0"
+  ],
+  "subscription": {
+    "active": false,
+    "sender_id": null
+  },
+  "caps": {
+    "media_types": [
+      "audio/L24",
+      "audio/L16"
+    ],
+    "constraint_sets": [
+      {
+        "urn:x-nmos:cap:format:channel_count": {
+          "maximum": 16
+        },
+        "urn:x-nmos:cap:format:sample_rate": {
+          "enum": [
+            { "numerator": 48000, "denominator": 1 }
+          ]
+        },
+        "urn:x-nmos:cap:transport:packet_time": {
+          "enum": [ 0.125 ]
+        }
+      },
+      {
+        "urn:x-nmos:cap:format:channel_count": {
+          "maximum": 8
+        },
+        "urn:x-nmos:cap:format:sample_rate": {
+          "enum": [
+            { "numerator": 48000, "denominator": 1 }
+          ]
+        },
+        "urn:x-nmos:cap:transport:packet_time": {
+          "enum": [ 1 ]
+        }
+      }
+    ],
+    "version": "1605272395:492335100"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "repository": "AMWA-TV/bcp-004-01",
+  "documents": [
+    {
+      "title": "AMWA BCP-004-01: NMOS Receiver Capabilities",
+      "url": "https://specs.amwa.tv/new/bcp-004-01/latest/1.0.%20Receiver%20Capabilities/",
+      "text": "AMWA BCP-004-01: NMOS Receiver Capabilities AMWA BCP-004-01: NMOS Receiver Capabilities Use of Normative Language Defining Parameter Constraints Parameter Constraint Identifiers Parameter Constraint Types Parameter Constraint Target Instantiating Parameter Constraints Constraint Keywords Common Constraint Keywords String Constraint Keywords Integer and Number Constraint Keywords Boolean Constraint Keywords Rational Constraint Keywords Constraint Sets Constraint Set Metadata Listing Constraint Sets Validating Parameter Constraints and Constraint Sets Capabilities Version Behaviour: Receivers Behaviour: Controllers AMWA BCP-004-01: NMOS Receiver Capabilities - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content AMWA BCP-004-01: NMOS Receiver Capabilities In IS-04 , a Receiver resource expresses the capabilities of a Receiver through attributes that identify constraints on streams of compatible Senders. Receivers indicate their transport and format . These attributes express constraints that can be evaluated against the related attributes of a Sender and its Flow. The Receiver caps object is provided as an extensible mechanism to define finer-grained constraints. IS-04 itself defines caps attributes for media_types (since v1.1) and, for data Receivers, also event_types (since v1.3). Both these attributes express constraints that can be evaluated against Flow attributes, as arrays whose elements define the alternatives that are acceptable. In each case, the constraint is satisfied when the target Flow attribute matches any of the enumerated alternatives. When caps contains multiple attributes, i.e. both media_types and event_types , the Receiver indicates that it only accepts streams that satisfy all of (both!) the constraints. This specification defines a new constraint_sets attribute for the Receiver caps object, which can also be combined with the existing ones. In common with the existing attributes, its value is an array of alternatives; this constraint is satisfied when any of its enumerated Constraint Sets are satisfied. This specification defines a generic JSON syntax to express Constraint Sets made up of individual Parameter Constraints. The Constraint Set is satisfied if all of its Parameter Constraints are satisfied. The representation of individual Parameter Constraints resembles the mechanism defined by IS-05 to constrain Sender and Receiver transport parameters at the /constraints endpoints, which Nodes and Controllers may also support. This specification also defines a version attribute to indicate when changes to the caps object took place. The constraints_set and version attributes are listed in the Capabilities parameter register in the NMOS Parameter Registers . Use of Normative Language The key words \"MUST\", \"MUST NOT\", \"REQUIRED\", \"SHALL\", \"SHALL NOT\", \"SHOULD\", \"SHOULD NOT\", \"RECOMMENDED\", \"MAY\", and \"OPTIONAL\" in this document are to be interpreted as described in RFC 2119 . Defining Parameter Constraints A specification for each Parameter Constraint is strongly RECOMMENDED to be listed in the Capabilities register in the NMOS Parameter Registers . Each specification defines a unique identifier, the constraint type, and the target parameter, as follows. Parameter Constraint Identifiers Each Parameter Constraint is given a unique identifier - a URN. Parameter Constraints defined by the AMWA have the form: urn:x-nmos:cap:<category>:<constraint> Two <category> names are initially defined, format for media-related constraints, and transport for transport-related constraints. For example, urn:x-nmos:cap:format:grain_rate is a Parameter Constraint relating to the Grain rate of the stream, for example by targeting the grain_rate attribute of an IS-04 Flow. (The concept of Grains is defined in the JT-NM Reference Architecture .) The <category> name meta is reserved for metadata related to Constraint Sets . These attributes are not constraints themselves. Manufacturers MAY use their own namespaces to indicate Parameter Constraints which are not currently defined within the NMOS namespace ( urn:x-nmos:cap: ). Parameter Constraint Types The specification defines the JSON value type to which the constraint relates, which MUST be one of: * string * integer * number * boolean * rational * as per IS-04, a JSON object with an integer numerator and optional integer denominator (default: 1) The type of the constraint defines which Constraint Keywords are allowed when the Parameter Constraint is instantiated. Parameter Constraint Target The specification defines the target parameter against which the constraint is to be evaluated, for example, the specific IS-04 Flow attribute or SDP format-specific parameter. Especially in the case of parameters carried in non-JSON formats, such as a transport file, the specification MUST also describe how to map the parameter value to one of the supported JSON types . Instantiating Parameter Constraints The Receiver expresses its capabilities with respect to a particular Parameter Constraint by including the constraint's unique identifier as an attribute in a Constraint Set with an object value, the attributes of which depend on the specified type . For example: \"urn:x-nmos:cap:format:sample_depth\" : { \"enum\" : [ 24 , 20 , 16 ] } Constraint Keywords Each Parameter Constraint is instantiated as an object with attributes that are type-specific Constraint Keywords defining how the parameter is constrained. The Parameter Constraint is satisfied if all of the constraints expressed by the Constraint Keywords are satisfied. This implies that if any of the constraints expressed by the Constraint Keywords are not satisfied, the Parameter Constraint is not satisfied. Equally, when there are no Constraint Keywords, the Parameter Constraint thus explicitly indicates that the target parameter is unconstrained. Note that in some cases, the target parameter will allow future addition of new values, for example by inclusion in the Flow Attributes register in t",
+      "repository": "AMWA-TV/bcp-004-01"
+    },
+    {
+      "title": "Examples",
+      "url": "https://specs.amwa.tv/new/bcp-004-01/latest/2.0.%20Examples/",
+      "text": "Examples Examples Audio ST 2110-30 Conformance Levels Video 720p59.94 Format 1080i Format Group High Definition Category Type N, W and A Video Receivers Examples - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content Examples This section provides examples of Receiver capabilities expressed using the Constraint Sets defined by this specification. Audio Consider an uncompressed audio RTP receiver, that is represented by the following simple IS-04 Receiver resource: { \"id\" : \"6605bf77-f95b-5d12-bbd7-8c4f98b79b25\" , \"version\" : \"1605275841:891227800\" , \"label\" : \"\" , \"description\" : \"\" , \"tags\" : { }, \"device_id\" : \"7652d792-e99f-57ff-a540-faccbf36a3a2\" , \"transport\" : \"urn:x-nmos:transport:rtp.mcast\" , \"format\" : \"urn:x-nmos:format:audio\" , \"interface_bindings\" : [ \"eth0\" ], \"subscription\" : { \"active\" : false , \"sender_id\" : null }, \"caps\" : { \"media_types\" : [ \"audio/L24\" , \"audio/L16\" ] } } This resource indicates via the transport and format that it represents an audio RTP receiver. The media_types capability is used to indicate that it supports both 'audio/L24' and 'audio/L16' uncompressed audio. However, none of these attributes defined in IS-04 are able to express that the receiver can handle a limited number of audio channels, and that the maximum number depends on the packet time. Using the mechanism defined by this specification and the audio Parameter Constraints listed in the Capabilities register of the NMOS Parameter Registers , the receiver's constraints can be expressed by including a constraint_sets attribute in the caps object, accompanied by a version attribute to indicate when the caps last changed. The following example caps object indicates the additional constraints of 48 kHz audio and a maximum of 16 channels with 125 microsecond packet time, or 8 channels with 1 millisecond packet time. \"caps\" : { \"media_types\" : [ \"audio/L24\" , \"audio/L16\" ], \"constraint_sets\" : [ { \"urn:x-nmos:cap:format:channel_count\" : { \"maximum\" : 16 }, \"urn:x-nmos:cap:format:sample_rate\" : { \"enum\" : [ { \"numerator\" : 48000 , \"denominator\" : 1 } ] }, \"urn:x-nmos:cap:transport:packet_time\" : { \"enum\" : [ 0.125 ] } }, { \"urn:x-nmos:cap:format:channel_count\" : { \"maximum\" : 8 }, \"urn:x-nmos:cap:format:sample_rate\" : { \"enum\" : [ { \"numerator\" : 48000 , \"denominator\" : 1 } ] }, \"urn:x-nmos:cap:transport:packet_time\" : { \"enum\" : [ 1 ] } } ], \"version\" : \"1605272395:492335100\" } For the full example, see: examples/receiver-audio.json ST 2110-30 Conformance Levels SMPTE ST 2110-30 defines Conformance Levels for audio Receivers. For an example of how a Receiver can indicate that it supports a specific Conformance Level, see: examples/receiver-audio-level-bx.json Video The mechanism defined by this specification and the video Parameter Constraints listed in the Capabilities register of the NMOS Parameter Registers can fully represent the video formats and format groups defined by VSF TR-05 for interoperability of ST 2110-20. The following sub-sections provide some examples of how specific formats or format groups can be indicated. 720p59.94 Format In this example, the fixed parameter values for this format are defined. \"caps\" : { \"media_types\" : [ \"video/raw\" ], \"constraint_sets\" : [ { \"urn:x-nmos:cap:meta:label\" : \"720p59.94 Format as per VSF TR-05:2018\" , \"urn:x-nmos:cap:format:frame_width\" : { \"enum\" : [ 1280 ] }, \"urn:x-nmos:cap:format:frame_height\" : { \"enum\" : [ 720 ] }, \"urn:x-nmos:cap:format:interlace_mode\" : { \"enum\" : [ \"progressive\" ] }, \"urn:x-nmos:cap:format:grain_rate\" : { \"enum\" : [ { \"numerator\" : 60000 , \"denominator\" : 1001 } ] }, \"urn:x-nmos:cap:format:color_sampling\" : { \"enum\" : [ \"YCbCr-4:2:2\" ] }, \"urn:x-nmos:cap:format:component_depth\" : { \"enum\" : [ 10 ] }, \"urn:x-nmos:cap:format:transfer_characteristic\" : { \"enum\" : [ \"SDR\" ] }, \"urn:x-nmos:cap:format:colorspace\" : { \"enum\" : [ \"BT709\" ] } } ], \"version\" : \"1605272395:492336200\" } 1080i Format Group This format grouping has two members, 1080i50 and 1080i59.94. If a receiver fully implements the group and is currently able to receive either format, a single Constraint Set is able to express this. \"caps\" : { \"media_types\" : [ \"video/raw\" ], \"constraint_sets\" : [ { \"urn:x-nmos:cap:meta:label\" : \"1080i Format Group as per VSF TR-05:2018\" , \"urn:x-nmos:cap:format:frame_width\" : { \"enum\" : [ 1920 ] }, \"urn:x-nmos:cap:format:frame_height\" : { \"enum\" : [ 1080 ] }, \"urn:x-nmos:cap:format:interlace_mode\" : { \"enum\" : [ \"interlaced_tff\" ] }, \"urn:x-nmos:cap:format:grain_rate\" : { \"enum\" : [ { \"numerator\" : 25 , \"denominator\" : 1 }, { \"numerator\" : 30000 , \"denominator\" : 1001 } ] }, \"urn:x-nmos:cap:format:color_sampling\" : { \"enum\" : [ \"YCbCr-4:2:2\" ] }, \"urn:x-nmos:cap:format:component_depth\" : { \"enum\" : [ 10 ] }, \"urn:x-nmos:cap:format:transfer_characteristic\" : { \"enum\" : [ \"SDR\" ] }, \"urn:x-nmos:cap:format:colorspace\" : { \"enum\" : [ \"BT709\" ] } } ], \"version\" : \"1605272395:492336200\" } High Definition Category TR-05 defines a high definition category that consists of the three format groups, 720p, 1080i and 1080p. A receiver could indicate support for the whole category using three Constraint Sets. \"constraint_sets\" : [ { \"urn:x-nmos:cap:meta:label\" : \"720p Format Group as per VSF TR-05:2018\" , ... }, { \"urn:x-nmos:cap:meta:label\" : \"1080i Format Group as per VSF TR-05:2018\" , ... }, { \"urn:x-nmos:cap:meta:label\" : \"1080p Format Group as per VSF TR-05:2018\" , ... } ] For a full example of a receiver that supports the 1080i and 1080p format groups, see: examples/receiver-video-1080.json Support for the formats in the ultra high definition category can be indicated similarly. Type N, W and A Video Receivers Receivers are informatively categorized in ST 2110-21 as Type N, Type W and Type A. For example, Type N receivers can be expected to correctly receive a stream originating from either a Type N or Type NL sender, provided that the receiver is locked to the same clock as the sender. This could be indicated by adding the fol",
+      "repository": "AMWA-TV/bcp-004-01"
+    },
+    {
+      "title": "Examples",
+      "url": "https://specs.amwa.tv/new/bcp-004-01/latest/examples/",
+      "text": "Examples Examples Examples - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content Examples receiver-audio-level-bx.json receiver-audio.json receiver-video-1080.json",
+      "repository": "AMWA-TV/bcp-004-01"
+    },
+    {
+      "title": "receiver-audio.json",
+      "url": "https://specs.amwa.tv/new/bcp-004-01/latest/examples/receiver-audio/",
+      "text": "receiver-audio.json receiver-audio.json receiver-audio.json - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content receiver-audio.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-004-01"
+    },
+    {
+      "title": "receiver-audio-level-bx.json",
+      "url": "https://specs.amwa.tv/new/bcp-004-01/latest/examples/receiver-audio-level-bx/",
+      "text": "receiver-audio-level-bx.json receiver-audio-level-bx.json receiver-audio-level-bx.json - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content receiver-audio-level-bx.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-004-01"
+    },
+    {
+      "title": "receiver-video-1080.json",
+      "url": "https://specs.amwa.tv/new/bcp-004-01/latest/examples/receiver-video-1080/",
+      "text": "receiver-video-1080.json receiver-video-1080.json receiver-video-1080.json - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content receiver-video-1080.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-004-01"
+    },
+    {
+      "title": "AMWA BCP-004-01: NMOS Receiver Capabilities",
+      "url": "https://specs.amwa.tv/new/bcp-004-01/latest/",
+      "text": "AMWA BCP-004-01: NMOS Receiver Capabilities AMWA BCP-004-01: NMOS Receiver Capabilities What does it do? Why does it matter? How does it work? Getting started AMWA BCP-004-01: NMOS Receiver Capabilities - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content AMWA BCP-004-01: NMOS Receiver Capabilities What does it do? Allows an IS-04 Receiver to express parametric constraints on the types of streams that it is capable of consuming Why does it matter? Controllers need to know whether a Receiver is capable of handling a specific Sender's stream before connecting the two How does it work? Establishes an open Capabilities register in the NMOS Parameter Registers that lists specifications for parametric constraints (such as width, height, frame rate, number of channels, etc.) Defines how a Receiver instantiates these Parameter Constraints to make up a list of acceptable Constraint Sets, within the IS-04 caps attribute Defines how Controllers evaluate whether an IS-04 Sender satisfies these constraints, based on the target parameters specified for each constraint (such as IS-04 Flow attributes and SDP format-specific parameters) Getting started There is more information about the NMOS Specifications and their GitHub repos at https://specs.amwa.tv/nmos .",
+      "repository": "AMWA-TV/bcp-004-01"
+    },
+    {
+      "title": "constraint_set",
+      "url": "https://specs.amwa.tv/new/bcp-004-01/latest/schemas/constraint_set/",
+      "text": "constraint_set constraint_set constraint_set - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content constraint_set With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-004-01"
+    },
+    {
+      "title": "constraint_sets",
+      "url": "https://specs.amwa.tv/new/bcp-004-01/latest/schemas/constraint_sets/",
+      "text": "constraint_sets constraint_sets constraint_sets - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content constraint_sets With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-004-01"
+    },
+    {
+      "title": "JSON Schemas",
+      "url": "https://specs.amwa.tv/new/bcp-004-01/latest/schemas/",
+      "text": "JSON Schemas JSON Schemas JSON Schemas - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content JSON Schemas constraint_set constraint_sets param_constraint param_constraint_boolean param_constraint_integer param_constraint_number param_constraint_rational param_constraint_string receiver_constraint_sets",
+      "repository": "AMWA-TV/bcp-004-01"
+    },
+    {
+      "title": "param_constraint",
+      "url": "https://specs.amwa.tv/new/bcp-004-01/latest/schemas/param_constraint/",
+      "text": "param_constraint param_constraint param_constraint - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content param_constraint With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-004-01"
+    },
+    {
+      "title": "param_constraint_boolean",
+      "url": "https://specs.amwa.tv/new/bcp-004-01/latest/schemas/param_constraint_boolean/",
+      "text": "param_constraint_boolean param_constraint_boolean param_constraint_boolean - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content param_constraint_boolean With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-004-01"
+    },
+    {
+      "title": "param_constraint_integer",
+      "url": "https://specs.amwa.tv/new/bcp-004-01/latest/schemas/param_constraint_integer/",
+      "text": "param_constraint_integer param_constraint_integer param_constraint_integer - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content param_constraint_integer With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-004-01"
+    },
+    {
+      "title": "param_constraint_number",
+      "url": "https://specs.amwa.tv/new/bcp-004-01/latest/schemas/param_constraint_number/",
+      "text": "param_constraint_number param_constraint_number param_constraint_number - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content param_constraint_number With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-004-01"
+    },
+    {
+      "title": "param_constraint_rational",
+      "url": "https://specs.amwa.tv/new/bcp-004-01/latest/schemas/param_constraint_rational/",
+      "text": "param_constraint_rational param_constraint_rational param_constraint_rational - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content param_constraint_rational With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-004-01"
+    },
+    {
+      "title": "param_constraint_string",
+      "url": "https://specs.amwa.tv/new/bcp-004-01/latest/schemas/param_constraint_string/",
+      "text": "param_constraint_string param_constraint_string param_constraint_string - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content param_constraint_string With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-004-01"
+    },
+    {
+      "title": "receiver_constraint_sets",
+      "url": "https://specs.amwa.tv/new/bcp-004-01/latest/schemas/receiver_constraint_sets/",
+      "text": "receiver_constraint_sets receiver_constraint_sets receiver_constraint_sets - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content receiver_constraint_sets With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/bcp-004-01"
+    }
+  ]
+}
