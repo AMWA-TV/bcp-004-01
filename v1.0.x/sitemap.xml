@@ -1,54 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-004-01/v1.0.x/</loc>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-004-01/v1.0.x/Receiver%20Capabilities/</loc>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/404/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-004-01/v1.0.x/Examples/</loc>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/Examples/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-004-01/v1.0.x/schemas/</loc>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/Receiver%20Capabilities/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-004-01/v1.0.x/schemas/constraint_set/</loc>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/examples/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-004-01/v1.0.x/schemas/constraint_sets/</loc>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/examples/receiver-audio-level-bx/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-004-01/v1.0.x/schemas/param_constraint/</loc>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/examples/receiver-audio/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-004-01/v1.0.x/schemas/param_constraint_boolean/</loc>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/examples/receiver-video-1080/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-004-01/v1.0.x/schemas/param_constraint_integer/</loc>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/schemas/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-004-01/v1.0.x/schemas/param_constraint_number/</loc>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/schemas/constraint_set/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-004-01/v1.0.x/schemas/param_constraint_rational/</loc>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/schemas/constraint_sets/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-004-01/v1.0.x/schemas/param_constraint_string/</loc>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/schemas/param_constraint/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-004-01/v1.0.x/schemas/receiver_constraint_sets/</loc>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/schemas/param_constraint_boolean/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-004-01/v1.0.x/examples/</loc>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/schemas/param_constraint_integer/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-004-01/v1.0.x/examples/receiver-audio-level-bx/</loc>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/schemas/param_constraint_number/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-004-01/v1.0.x/examples/receiver-audio/</loc>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/schemas/param_constraint_rational/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-004-01/v1.0.x/examples/receiver-video-1080/</loc>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/schemas/param_constraint_string/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/bcp-004-01/v1.0.x/v1.0.x/schemas/receiver_constraint_sets/</loc>
       </url>
 </urlset>
