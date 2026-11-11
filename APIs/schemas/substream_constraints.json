@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Describes substream constraints",
+  "title": "Constraint Set",
+  "type": "object",
+  "minProperties": 1,
+  "properties": {
+    "description": {
+      "description": "Substream group description",
+      "type": "string"
+    },
+    "format": {
+      "description": "Substream format",
+      "type": "string",
+      "anyOf": [
+        {
+          "enum": [
+            "urn:x-nmos:format:video",
+            "urn:x-nmos:format:audio",
+            "urn:x-nmos:format:data"
+          ]
+        },
+        {
+          "pattern": "^urn:x-nmos:format:(?!mux$)"
+        }
+      ]
+    },
+    "count": {
+      "$ref": "param_constraint_number.json"
+    },
+    "constraint_sets": {
+      "description": "Substream constraint sets",
+      "type": "array",
+      "items": {
+        "$ref": "constraint_set.json"
+      }
+    }
+  }
+}
