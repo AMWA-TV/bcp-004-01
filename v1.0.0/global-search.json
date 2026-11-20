@@ -15,12 +15,6 @@
       "repository": "AMWA-TV/bcp-004-01"
     },
     {
-      "title": "Page not found",
-      "url": "https://specs.amwa.tv/bcp-004-01/latest/404/",
-      "text": "Page not found Page not found Page not found - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content Page not found The page you requested could not be found. Return to the documentation home",
-      "repository": "AMWA-TV/bcp-004-01"
-    },
-    {
       "title": "Examples",
       "url": "https://specs.amwa.tv/bcp-004-01/latest/examples/",
       "text": "Examples Examples Examples - AMWA BCP-004-01: NMOS Receiver Capabilities Skip to content Examples receiver-audio-level-bx.json receiver-audio.json receiver-video-1080.json",
